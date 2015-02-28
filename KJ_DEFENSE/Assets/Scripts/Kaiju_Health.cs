@@ -20,7 +20,9 @@ public class Kaiju_Health : MonoBehaviour
 	// this group of value use for cool down
 	public float coolDownBetweenHit;
 	public float dieCD;
+	public float attackCD;
 	private bool onCD;
+	public bool attacking = false;
 	IEnumerator coolDownDmg(){
 		onCD = true;
 		yield return new WaitForSeconds(coolDownBetweenHit);
@@ -38,12 +40,11 @@ public class Kaiju_Health : MonoBehaviour
 	//=================Update every frame===========
 	// Check if kaiju is half health or 0 health to play sound. and play animation.
 	void Update(){
-
-		if (currentHealth>0) {
-		//	KaijuPosition.x += -1.0f * kaijuSpeed * Time.deltaTime;;
-		//	this.transform.position = KaijuPosition;
+		// make monster moving if still alive
+		if (currentHealth > 0 && !attacking) {
 			moving(-1.0f);
 		}
+		// play sound and set animation if monster low to certain healt
 		if (currentHealth == (maxHealth/2)+1)//i dont know why i must be +1 to give the right value.
 			playSound(0);
 		else if (currentHealth == 0){
@@ -56,7 +57,18 @@ public class Kaiju_Health : MonoBehaviour
 		if (currentHealth == 0 && dieCD >= 1f) {
 			anim.SetTrigger ("StayDead");
 			Destroy (this.gameObject, 4.0f);
-
+				}
+		// set animation attack 
+		if (currentHealth >= 0 && attackCD < 5.0f) {
+						attacking = false;
+						attackCD += Time.deltaTime;
+						anim.SetBool ("Golem Attack", false);
+				} else if (currentHealth >= 0 && attackCD < 6.5f) {
+						attacking = true;
+						attackCD += Time.deltaTime;
+						anim.SetBool ("Golem Attack", true);
+				} else {
+						attackCD = 0;
 				}
 
 	}

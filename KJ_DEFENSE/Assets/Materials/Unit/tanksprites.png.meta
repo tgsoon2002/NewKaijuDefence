@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: 60b34a9cc3826fc458845b050124b318
+guid: b01615f110918af469f33067285aee83
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tanksprites_Top
-    21300002: tanksprites_Cannon
-    21300004: tanksprites_Bottom
-    21300006: tanksprites_Thread
+    21300000: tanksprite_Cannon
+    21300002: tanksprite_Top
+    21300004: tanksprites_bottom
+    21300006: tankspriteTread
+    21300008: tanksprites_Barrel
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,45 +48,55 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: tanksprites_Top
+    - name: tanksprite_Cannon
       rect:
         serializedVersion: 2
-        x: 102
-        y: 937
-        width: 935
-        height: 532
+        x: 1215
+        y: 1137
+        width: 271
+        height: 296
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tanksprites_Cannon
+    - name: tanksprite_Top
       rect:
         serializedVersion: 2
-        x: 1220
-        y: 1146
-        width: 769
-        height: 287
-      alignment: 9
-      pivot: {x: .144380763, y: .515005708}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tanksprites_Bottom
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 558
-        width: 1213
-        height: 265
+        x: 108
+        y: 935
+        width: 929
+        height: 528
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tanksprites_Thread
+    - name: tanksprites_bottom
       rect:
         serializedVersion: 2
-        x: 929
-        y: 78
+        x: 79
+        y: 565
+        width: 1218
+        height: 256
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tankspriteTread
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 69
         width: 1075
-        height: 411
+        height: 412
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanksprites_Barrel
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 1228
+        width: 500
+        height: 161
+      alignment: 5
+      pivot: {x: 1, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

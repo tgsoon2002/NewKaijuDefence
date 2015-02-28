@@ -22,20 +22,19 @@ public class Unit : MonoBehaviour
 	//public float screenPosY; //...
 	//public int iconSizeX = 10; //Controls icon size on screen
 	//public int iconSizeY = 10; //...
-	public int tankHealth = 10; //Starting armor
-	public int tankMaxHealth = 10;
+	public int unitHealth = 10; //Starting armor
+	public int unitMaxHealth = 10;
 	private GameManager gameManager;
 	private CameraManager cameraManager;
 	public float objSpeed;
 	private Vector3 position;
 	private Quaternion rotation;
-	public float timeBetweenAttack = 0.5f;
-	private float timer;
-
 
 	public List<AudioClip> listAudioClip ;
 
 	//this group of value use for cool down
+	public float timeBetweenAttack = 0.5f;
+	private float timer;
 	public float coolDownBetweenTakeHit;
 	private bool onCD;
 	IEnumerator coolDownDmg()
@@ -62,10 +61,14 @@ public class Unit : MonoBehaviour
 	// Update every frame, make sure destroy tank if health below 0
 	void Update()
 	{
+		if (Input.GetKeyUp(KeyCode.Space)) {
+			anim.SetBool ("Shooting",false);
+				}
+
 		timer += Time.deltaTime; // record time since the last trigger
 		position = gameObject.transform.position;
 
-		if (this.tankHealth <= 0) 
+		if (this.unitHealth <= 0) 
 		{
 
 			gameManager.RemoveUnitFromList(this.gameObject);
@@ -78,7 +81,7 @@ public class Unit : MonoBehaviour
 			//.getAllUnit();
 
 		}
-		if (this.tankHealth <= tankMaxHealth/3) {
+		if (this.unitHealth <= unitMaxHealth/3) {
 			//this.gameObject.GetComponent<particleSystem>.enabled = true;
 				}
 
@@ -100,7 +103,9 @@ public class Unit : MonoBehaviour
 	//parameter angel<float>
 	public void ChangeCannonAngle(float angle)
 	{
-		this.transform.GetChild(0).transform.Rotate(Vector3.forward * angle);
+		if (type != Unit_Type.INFANTRY) {
+			this.transform.GetChild(0).transform.Rotate(Vector3.forward * angle);
+		}
 	}
 
 	//=====================================================================
@@ -108,34 +113,39 @@ public class Unit : MonoBehaviour
 	//parameter move<bool>
 	public void setAnimation(bool move)
 	{
-		if(move == true)
-		{
-			anim.SetFloat("Speed", Mathf.Abs(objSpeed));
-		}
-		else
-		{
-			anim.SetFloat("Speed", Mathf.Abs(0.0f));
-		}
-	}
-	
+		if (type == Unit_Type.TANK) {
+			anim.SetBool ("Moving", move);
+			Debug.Log(move);
+		} 
+
+
+
+		//if(move == true)
+		//{
+		//	anim.SetFloat("Speed", Mathf.Abs(objSpeed));
+		//}
+		//else
+		//{
+		//	anim.SetFloat("Speed", Mathf.Abs(0.0f));
+		//}
+	}	
 	//=====================================================================
 	// collider, check if it hit the damage 
 	void OnTriggerStay2D(Collider2D other )
 	{
-		if(other.CompareTag("Danger")  )
+		if(other.CompareTag("Danger"))
 		{
 			takeDamage();
 		}
 	}
-
 	//=====================================================================
 	// call this function to reduce tank health.
 	public void takeDamage()
 	{
-		if (!onCD && this.tankHealth>0) {
+		if (!onCD && this.unitHealth>0) {
 			StartCoroutine(coolDownDmg());
 
-		this.tankHealth--;
+			this.unitHealth--;
 		}
 	}
 	//=====================================================================
@@ -144,6 +154,7 @@ public class Unit : MonoBehaviour
 	{
 		//Debug.Log ("shoot");
 		//audio.clip = listAudioClip[0];
+		anim.SetBool ("Shooting",true);
 		gameObject.audio.Play();
 	}
 }

@@ -53,29 +53,22 @@ public class InputManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{	
-
 		newUnitCoolDown = false;
-
 		isBuyPressed = false;
 		unitSelected = false;
 		isNotHit = true;
 		cameraManager = Camera.main.GetComponent<CameraManager>();
 		//gameManager = gameObject.GetComponent<GameManager>();
         spawnManager = gameObject.GetComponent<SpawnManager>();
-		unit = gameManager.GetFocusedUnit().GetComponent<Unit>();
-
-      
+		unit = gameManager.GetFocusedUnit().GetComponent<Unit>();   
 		//handleAllInputs += HandleAddUnit;
-
 		barrel = gameManager.GetFocusedUnit ().GetComponent<Unit> ().GetComponent<UnitShootingScipt> ();
-			
-		handleAllInputs += HandleAddUnit;
 
+		handleAllInputs += HandleAddUnit;
 		handleAllInputs += HandleCameraPanning;
 		handleAllInputs += HandleCameraZooming;
 		handleAllInputs += GoIntoBuyingState;
-
-
+		
 		handleUnitInputs += HandleUnitCameraFocus;
 		handleUnitInputs += HandleUnitMovement;
 		handleUnitInputs += HandleUnitShoot;
@@ -86,26 +79,23 @@ public class InputManager : MonoBehaviour
 
 		cameraManager.UnitFocus(unit);
 	}
-
+	//=============================================================================================================
 	// Update is called once per frame
 	void Update() 
 	{
         handleAllInputs();
         handleBuyInputs();
-
-		if(gameManager.focusedUnit != null && cameraManager.isBuying == false)
-		{
+		if(gameManager.focusedUnit != null && cameraManager.isBuying == false){
 			handleUnitInputs();
             unit = gameManager.focusedUnit.GetComponent<Unit>();
         }
-        else if(cameraManager.isBuying == true)
-        {
+        else if(cameraManager.isBuying == true){
         	HandleSpawnState();
         }
 
 		timerShot += Time.deltaTime;
 	}
-		
+	//===========================================================================================================================	
 	//press tab to switch between unit.
 	void HandleUnitCameraFocus()
 	{
@@ -134,12 +124,12 @@ public class InputManager : MonoBehaviour
 	 //press a or d to move unit being controled
 	void HandleUnitMovement()
 	{
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey("a"))
         {
             unit.setAnimation(true);
             unit.MoveFocusedUnit(back);
         }
-        else if(Input.GetKey(KeyCode.D)/*Down(KeyCode.D)*/)
+        else if(Input.GetKey("d")/*Down(KeyCode.D)*/)
         {
             unit.setAnimation(true);
             unit.MoveFocusedUnit(forward);
@@ -154,18 +144,17 @@ public class InputManager : MonoBehaviour
 	{
 		if(Input.GetKey("w"))
 		{	
-			unit.setAnimation(true);
+			//unit.setAnimation(true);
 			unit.ChangeCannonAngle(forward);
-		}
-		
+		}		
 		else if(Input.GetKey("s")/*Down(KeyCode.D)*/)
 		{
-			unit.setAnimation(true);
+			//unit.setAnimation(true);
 			unit.ChangeCannonAngle(back);
 		}
 		else
 		{
-			unit.setAnimation(false);
+			//	unit.setAnimation(false);
 		}
 	}
 
@@ -179,17 +168,11 @@ public class InputManager : MonoBehaviour
 
 			cameraManager.isPanning = true;
 			cameraRay = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-
-
-			Debug.Log (cameraRay.collider);
-
 			if(cameraRay.collider == null)
 			{
 				//Get the origin of the mouse's position
 				lastMousePosition = Input.mousePosition;
 				isNotHit = true;
-
-				Debug.Log ("Not hit");
 			}
 			else
 			{
@@ -306,7 +289,8 @@ public class InputManager : MonoBehaviour
 	void HandleUnitShoot()
 	{
 		if (Input.GetButtonDown ("Shoot") && timerShot >= timeBetweenShot) {
-			GameObject newUnit = Instantiate(Resources.Load("Bullet"),unit.transform.GetChild(0).transform.position,unit.transform.GetChild(0).transform.rotation) as GameObject;
+			//this.transform.GetChild(0).transform.Rotate(Vector3.forward * angle);
+			GameObject newUnit = Instantiate(Resources.Load("Bullet"),unit.transform.GetChild(0).GetChild(0).transform.position,unit.transform.GetChild(0).transform.rotation) as GameObject;
 			newUnit.rigidbody2D.AddForce(900.0f * unit.transform.GetChild(0).transform.right);
 			unit.GetComponent<Unit>().ShootSound();
 //			barrel.flash();
