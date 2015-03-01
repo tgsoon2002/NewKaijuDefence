@@ -117,17 +117,7 @@ public class Unit : MonoBehaviour
 			anim.SetBool ("Moving", move);
 			Debug.Log(move);
 		} 
-
-
-
-		//if(move == true)
-		//{
-		//	anim.SetFloat("Speed", Mathf.Abs(objSpeed));
-		//}
-		//else
-		//{
-		//	anim.SetFloat("Speed", Mathf.Abs(0.0f));
-		//}
+	
 	}	
 	//=====================================================================
 	// collider, check if it hit the damage 
@@ -149,11 +139,9 @@ public class Unit : MonoBehaviour
 		}
 	}
 	//=====================================================================
-	// Playsound
+	// Playsound and set animation for recoil
 	public void ShootSound()
 	{
-		//Debug.Log ("shoot");
-		//audio.clip = listAudioClip[0];
 		anim.SetBool ("Shooting",true);
 		gameObject.audio.Play();
 	}

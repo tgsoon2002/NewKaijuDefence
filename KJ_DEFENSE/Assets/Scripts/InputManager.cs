@@ -34,12 +34,13 @@ public class InputManager : MonoBehaviour
 
 	//Private members for buy state
 	private bool newUnitCoolDown;
-
+	private bool buyingMode =false;
 	private bool isBuyPressed;
 	private bool unitSelected;
 	private Unit_Type type;
 	
 	public float timeBetweenShot = 1.5f;
+	public float timeBetweenBuy = 2.0f;
     public Unit unit;
 
 	public GameManager gameManager;
@@ -47,6 +48,7 @@ public class InputManager : MonoBehaviour
     //public GameObject icon;
 
 	float timerShot;
+	public float timerBuy;
 
 	private bool isNotHit;
 
@@ -83,6 +85,11 @@ public class InputManager : MonoBehaviour
 	// Update is called once per frame
 	void Update() 
 	{
+		if (buyingMode) {
+			Time.timeScale = 0.2F;
+		} else {
+			Time.timeScale = 1.0F;
+		}
         handleAllInputs();
         handleBuyInputs();
 		if(gameManager.focusedUnit != null && cameraManager.isBuying == false){
@@ -94,6 +101,7 @@ public class InputManager : MonoBehaviour
         }
 
 		timerShot += Time.deltaTime;
+		timerBuy += Time.deltaTime;
 	}
 	//===========================================================================================================================	
 	//press tab to switch between unit.
@@ -121,7 +129,7 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
-	 //press a or d to move unit being controled
+	 //===========press a or d to call move functoin of  unit being controled=================
 	void HandleUnitMovement()
 	{
         if(Input.GetKey("a"))
@@ -139,33 +147,28 @@ public class InputManager : MonoBehaviour
             unit.setAnimation(false);
         }
 	}
-
+	//===========press w or s to change functoin change angle of controlling unit=================
 	void HandleCannonAngle()
 	{
 		if(Input.GetKey("w"))
 		{	
-			//unit.setAnimation(true);
 			unit.ChangeCannonAngle(forward);
 		}		
 		else if(Input.GetKey("s")/*Down(KeyCode.D)*/)
 		{
-			//unit.setAnimation(true);
 			unit.ChangeCannonAngle(back);
 		}
 		else
 		{
-			//	unit.setAnimation(false);
+			//	unit.setAnimation(false); // i remove so there is no conflict of 2 functon affect. 
 		}
 	}
-
-	// move mouse while holding left click to pan
+	// ========move mouse while holding left click to pan===============
 	void HandleCameraPanning()
 	{
 		//Declaring local variables
-
 		if(Input.GetMouseButtonDown(0))
 		{
-
 			cameraManager.isPanning = true;
 			cameraRay = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 			if(cameraRay.collider == null)
@@ -179,14 +182,13 @@ public class InputManager : MonoBehaviour
 				isNotHit = false;
 			}
 		}
-
 		if (Input.GetMouseButton(0) && isNotHit == true)
 		{
 			cameraManager.CameraPanning(lastMousePosition);
 		}
 	}
 
-	// zoom in and out with mouse wheel
+	// ===============zoom in and out with mouse wheel=====================
 	void HandleCameraZooming()
 	{
 		float newValue = Input.GetAxis("Mouse ScrollWheel");
@@ -194,7 +196,7 @@ public class InputManager : MonoBehaviour
 
 	}
 
-	// Adding new unit
+	// =================Adding new unit===========================
 	void HandleAddUnit()
 	{
 		if (Input.GetButtonDown ("SpawnTank")) 
@@ -207,7 +209,7 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
-    // The buying state
+    // ===================The buying state======================
     void GoIntoBuyingState()
     {
         if(Input.GetKeyDown(KeyCode.B) && isBuyPressed == false)
@@ -216,32 +218,41 @@ public class InputManager : MonoBehaviour
 			tmp = Instantiate(Resources.Load("Temp_Spawn_Icon"), Camera.main.ScreenToWorldPoint(Input.mousePosition), gameManager.SpawnLocation.rotation) as GameObject;
 			cameraManager.isBuying = true;
             cameraManager.SpawnIconFocus(tmp.GetComponent<SpawnIconBehavior>());
+
         }
+		else {
+
+		}
     }
 
     void HandleBuyingState()
     {
-    	if(isBuyPressed == true)
+		if(isBuyPressed == true )
 		{
+			buyingMode = true;
 			if(Input.GetKeyDown(KeyCode.Alpha1))
 			{
 				type = Unit_Type.ARTILLERY;
 				unitSelected = true;
+
 			}
 			else if(Input.GetKeyDown(KeyCode.Alpha2))
 			{
 				type = Unit_Type.INFANTRY;
 				unitSelected = true;
+
 			}
 			else if(Input.GetKeyDown(KeyCode.Alpha3))
 			{
 				type = Unit_Type.TANK;
 				unitSelected = true;
-			}
-		}
 
+			}
+
+		}
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
+			buyingMode = false;
 			cameraManager.isBuying = false;
 			isBuyPressed = false;
 			unitSelected = false;
@@ -256,7 +267,7 @@ public class InputManager : MonoBehaviour
 		Vector3 mousePosNormalized;
 
 
-		if(unitSelected == true)
+		if(unitSelected == true && timerBuy >= timeBetweenBuy)
 		{
 			if(Input.GetMouseButtonDown(0))
 			{
@@ -273,6 +284,7 @@ public class InputManager : MonoBehaviour
 				isBuyPressed = false;
 				unitSelected = false;
 				Destroy(tmp);
+				timerBuy = 0;
 			}
 
 			if(Input.GetKeyDown(KeyCode.Escape))
@@ -282,6 +294,7 @@ public class InputManager : MonoBehaviour
 				isBuyPressed = false;
 				unitSelected = false;
 				Destroy(tmp);
+				buyingMode = false;
 			}
 		}
 	
