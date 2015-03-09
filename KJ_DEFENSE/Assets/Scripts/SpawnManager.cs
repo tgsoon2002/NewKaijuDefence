@@ -82,7 +82,9 @@ public class SpawnManager : MonoBehaviour
         {
             case Unit_Type.ARTILLERY:
 
-                //Do shit here
+			spawnedUnit = Instantiate(Resources.Load("Artillery"), 
+			                          new Vector3(initialPosition, -2.1238f, 0.0f), gameObject.transform.rotation) as GameObject;  
+
                 break;
 
             case Unit_Type.INFANTRY:

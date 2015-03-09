@@ -199,14 +199,14 @@ public class InputManager : MonoBehaviour
 	// =================Adding new unit===========================
 	void HandleAddUnit()
 	{
-		if (Input.GetButtonDown ("SpawnTank")) 
-		{
-			GameObject newUnit = Instantiate(Resources.Load("TankObj-A"),gameManager.SpawnLocation.position,gameManager.SpawnLocation.rotation) as GameObject;
-			gameManager.AppendUnitToList (newUnit);
-			gameManager.CycleUnits();
-			gameManager.SetFocusedUnit();
-			cameraManager.UnitFocus(newUnit.GetComponent<Unit>());
-		}
+		//if (Input.GetButtonDown ("SpawnTank")) 
+		//{
+		//	GameObject newUnit = Instantiate(Resources.Load("TankObj-A"),gameManager.SpawnLocation.position,gameManager.SpawnLocation.rotation) as GameObject;
+		//	gameManager.AppendUnitToList (newUnit);
+		//	gameManager.CycleUnits();
+		//	gameManager.SetFocusedUnit();
+		//	cameraManager.UnitFocus(newUnit.GetComponent<Unit>());
+		//}
 	}
 
     // ===================The buying state======================
