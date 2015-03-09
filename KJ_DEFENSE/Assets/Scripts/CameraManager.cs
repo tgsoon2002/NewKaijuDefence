@@ -66,7 +66,7 @@ public class CameraManager : MonoBehaviour
 		topBound = (heightBG / 2.0f) - vertExtent;
 	}
 	
-	// Update is called once per frame
+	// =================Update is called once per frame=======================
 	void Update () 
 	{
 		//Making the camera move to the focused GameObject
@@ -83,7 +83,7 @@ public class CameraManager : MonoBehaviour
              CameraFollowSpawn();
         }
 	}
-
+	//==============================================================
 	//Method -- CameraPanning
 	//Parameters -- mousePosOrigin
 	//Purpose -- This will make the camera pan around the world screen.
@@ -120,12 +120,12 @@ public class CameraManager : MonoBehaviour
 			camera.orthographicSize += value;
 		}
 	}
-
+	//==================camera follow the unit being control=======================
 	private void CameraFollowUnit()
 	{
 		if(panCam == false)
 		{
-			newPosition = new Vector3 (focusedUnit.transform.position.x + 2.0f, focusedUnit.transform.position.y + 2.0f, -10.0f);
+			newPosition = new Vector3 (focusedUnit.transform.position.x + 2.0f, focusedUnit.transform.position.y - 4.0f, -10.0f);
 			newPosition.x = Mathf.Clamp (newPosition.x, leftBound, rightBound);
 			newPosition.y = Mathf.Clamp (newPosition.y, bottomBound, rightBound);
 			Camera.main.transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * camSpeed);
