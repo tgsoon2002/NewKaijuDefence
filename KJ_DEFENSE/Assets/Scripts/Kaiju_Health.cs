@@ -6,11 +6,13 @@ using System.Collections.Generic;
 public class Kaiju_Health : MonoBehaviour 
 {
 	// Action
-	public Vector3 KaijuPosition;
+	Vector3 KaijuPosition;
 	public float kaijuSpeed;
 	// health
 	public int maxHealth;   
-	public  int currentHealth;
+	public int currentHealth ;
+	// list of vulnerable part. 
+	//public List<GameObject> vulnerablePart;
 
 	// audio
 	public List<AudioClip> listAudioClip ;
@@ -21,18 +23,13 @@ public class Kaiju_Health : MonoBehaviour
 	public float coolDownBetweenHit;
 	public float dieCD;
 	public float attackCD;
-	private bool onCD;
+	private float onCD;
 	public bool attacking = false;
-	IEnumerator coolDownDmg(){
-		onCD = true;
-		yield return new WaitForSeconds(coolDownBetweenHit);
-		onCD = false;
-	}
 
 	//=====================================================================
 	void Start () 
 	{
-		onCD  = false;
+
 		anim = GetComponent <Animator> ();
 		currentHealth = maxHealth;
 		KaijuPosition = this.transform.position;
@@ -60,26 +57,31 @@ public class Kaiju_Health : MonoBehaviour
 			anim.SetTrigger ("StayDead");
 			Destroy (this.gameObject, 4.0f);
 				}
-		// set animation attack 
-		if (currentHealth >= 0 && attackCD < 5.0f) {
+		 //set animation attack 
+		if (currentHealth >= 0 && attackCD < 7.0f)  // if golem still alive. but under cool down.
+		{
 						attacking = false;
-						attackCD += Time.deltaTime;
 						anim.SetBool ("Golem Attack", false);
-				} else if (currentHealth >= 0 && attackCD < 6.5f) {
-						attacking = true;
-						attackCD += Time.deltaTime;
+				} 
+		else 
+			if (currentHealth >= 0 && attackCD < 8.5f) 
+		{
+						attacking = true;						
 						anim.SetBool ("Golem Attack", true);
-				} else {
-						attackCD = 0;
+				
+				} 
+		else {
+			attackCD = 0;
 				}
-
+		onCD += Time.deltaTime;
+		attackCD += Time.deltaTime;
 	}
 
 	//=======================Call when kaiju got hit=======================
 	public void KaijuGetDmg(int damage){
-	
-		if (!onCD && currentHealth>0) {
-			StartCoroutine(coolDownDmg());
+		if (onCD >= 2.0f && currentHealth>0) {
+			//StartCoroutine(coolDownDmg());
+			onCD = 0;
 			currentHealth-= damage;
 		}
 	}

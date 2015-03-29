@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 1ec9ddff1529aaf4589cba49e3c626f8
+timeCreated: 1427600492
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UpgradeButton_Background
+    21300002: UpgradeButton_1
+    21300004: UpgradeButton_2
+    21300006: UpgradeButton_Frame
+    21300008: UpgradeButton_HightLight
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: UpgradeButton_Background
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 161
+        width: 229
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UpgradeButton_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 104
+        width: 172
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UpgradeButton_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 50
+        width: 172
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UpgradeButton_Frame
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 33
+        width: 174
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UpgradeButton_HightLight
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 5
+        width: 182
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

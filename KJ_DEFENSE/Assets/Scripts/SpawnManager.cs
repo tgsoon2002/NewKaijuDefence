@@ -7,13 +7,12 @@ public class SpawnManager : MonoBehaviour
     
     //--Private
     private Vector3 target;
-    private float smoothing;
     private float initialPosition;
     private GameObject spawnedUnit;
-	private bool atPosition;
-
+	private bool atPosition = false;
+	Vector3 start;
     //--Public
-
+	bool isRunning = false;
 	public Transform spawnLocation;
 
 
@@ -21,11 +20,7 @@ public class SpawnManager : MonoBehaviour
     public Vector3 Target
     {
         get { return target; }
-
-        set
-        {
-            target = value;
-        }
+        set { target = value; }
     }
 
     //Setter and Getter for spawedUnit
@@ -39,66 +34,35 @@ public class SpawnManager : MonoBehaviour
 	public bool unitAtLocation
 	{
 		get { return atPosition; }
-
 		set { atPosition = value; }
 	}
 
     //--Implemented Methods
     
-    //Method - Start
-    //Parameters: n/a
-    //Purpose:
-    /*  
-        Initializes this class' data members.
-    */
-    void Start()
-    {
-        //Initializing data members
-        smoothing = 7.0f;
-		atPosition = false;
-    }
     
-    //Method -- SpawnUnit
-    //Parameters: Unit_Type, Transform
-    //Purpose:
-    /*  
-        This method will instantiate a unit to the screen.
-        What kind of unit it will instantiate will be based
-        on the value that was passed in this method's argument.
-        Also takes on a second argument which is a Transform 
-        object that is from the spawner icon. This method
-        will tell where
-    */
-    public GameObject SpawnUnit(Unit_Type unit, float loc)
+    //================Method -- SpawnUnit=============================
+    public GameObject SpawnUnit(Unit_Type unit)
     {
-        //Assigning our initial position
-        //2000 is simply a placeholder value
-
-        initialPosition = -50.0f;
-
-		Debug.Log (initialPosition);
-
+    
         switch(unit)
         {
-            case Unit_Type.ARTILLERY:
-
-			spawnedUnit = Instantiate(Resources.Load("Artillery"), 
-			                          new Vector3(initialPosition, -2.1238f, 0.0f), gameObject.transform.rotation) as GameObject;  
-
+		case Unit_Type.TANK:
+			spawnedUnit = Instantiate(Resources.Load("TankObj-A"), 
+			new Vector3(spawnLocation.transform.position.x, spawnLocation.transform.position.y, 0.0f), 
+			gameObject.transform.rotation) as GameObject;  
+			break;
+		case Unit_Type.ARTILLERY:
+				spawnedUnit = Instantiate(Resources.Load("Artillery"), 
+				new Vector3(spawnLocation.transform.position.x, spawnLocation.transform.position.y, 0.0f),
+			    gameObject.transform.rotation) as GameObject;  
                 break;
 
-            case Unit_Type.INFANTRY:
+        case Unit_Type.INFANTRY:
 
                 //Do shit here
                 break;
 
-            /* Default case makes it spawn Tanks instead */
-            default:
-                
-                //Instantiation happens here
-                spawnedUnit = Instantiate(Resources.Load("TankObj-A"), 
-			                          new Vector3(initialPosition, -2.1238f, 0.0f), gameObject.transform.rotation) as GameObject;  
-
+            default: 
                 break;
         }
 
@@ -112,8 +76,12 @@ public class SpawnManager : MonoBehaviour
 	*/
 	public void CoroutineForMove(Vector3 tag, GameObject o)
 	{
+		isRunning = true;
 		StartCoroutine(MoveToLocation(tag, o));
 		StopCoroutine("MoveToLocation");
+
+
+
 	}
 
     //Method -- MoveToLocation
@@ -127,23 +95,23 @@ public class SpawnManager : MonoBehaviour
     */
     IEnumerator MoveToLocation(Vector3 target, GameObject obj)
     {
-		//target = target + new Vector3(spawnLocation.position.x, 0.0f, 0.0f);
-		Vector3 start;
-		bool isRunning = true;
 
 		while(isRunning == true)
 		{
-			start = new Vector3(obj.transform.position.x, -2.1238f, 0.0f);
+			start = new Vector3(obj.transform.position.x, spawnLocation.transform.position.y, 0.0f);
 			obj.transform.position = Vector3.MoveTowards(start, target, Time.deltaTime * 10.0f);
-			Debug.Log("New Tank's Position: " + obj.transform.position);
-
-			if(obj.transform.position == target)
+			Debug.Log("still couroutine");
+			//Debug.Log("New Tank's Position: " + obj.transform.position);
+			Debug.Log(obj.transform.position.x - target.x);
+			if(Mathf.Abs(obj.transform.position.x - target.x) <= 0.005f )
 			{
 				isRunning = false;
 				atPosition = true;
+				Debug.Log("At destination");
+
 			}
 
-			yield return null;
+		yield return null;
 
 		}
     }

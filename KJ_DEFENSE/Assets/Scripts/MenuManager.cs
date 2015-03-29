@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		//play the sound of animation clash
 		cdSound += Time.deltaTime;
 		if (cdSound > cdSoundmax && looptime <= 1) {
 			playSound(0);
@@ -21,7 +22,7 @@ public class MenuManager : MonoBehaviour {
 	}
 	private void playSound(int clip)
 	{
-		audio.clip = listAudioClip[clip];
-		audio.Play();
+		GetComponent<AudioSource>().clip = listAudioClip[clip];
+		GetComponent<AudioSource>().Play();
 	}
 }

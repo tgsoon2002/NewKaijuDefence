@@ -14,7 +14,7 @@ public class CameraManager : MonoBehaviour
     private Vector3 pos;
     private bool buyState;
     private bool panCam;
-
+	private Transform focusTransform;
 	//--Public members
 	public float camSpeed;
 	public GameObject centerBg;
@@ -24,7 +24,6 @@ public class CameraManager : MonoBehaviour
     public bool isBuying
     {
         get { return buyState; }
-
         set { buyState = value; }
     }
 	
@@ -32,7 +31,6 @@ public class CameraManager : MonoBehaviour
     public bool isPanning
     {
         get { return panCam; }
-
         set { panCam = value; }
     }
 
@@ -58,8 +56,8 @@ public class CameraManager : MonoBehaviour
             
 		float widthBG = 38.4f;
 		float heightBG = 10.24f;
-		float vertExtent = camera.orthographicSize; 
-		float horzExtent = camera.orthographicSize * Screen.width / Screen.height;
+		float vertExtent = GetComponent<Camera>().orthographicSize; 
+		float horzExtent = GetComponent<Camera>().orthographicSize * Screen.width / Screen.height;
 		leftBound = horzExtent - (widthBG / 2.0f);
 		rightBound = (widthBG / 2.0f) - horzExtent;
 		bottomBound = vertExtent - (heightBG / 2.0f);
@@ -82,6 +80,7 @@ public class CameraManager : MonoBehaviour
             //Lerp the camera to the spawn icon
              CameraFollowSpawn();
         }
+
 	}
 	//==============================================================
 	//Method -- CameraPanning
@@ -103,6 +102,7 @@ public class CameraManager : MonoBehaviour
 		//This will Translate, or move, the camera's position to the mouse's position
 		gameObject.transform.position = temp;
 	}
+	//==================CameraZooming=================================
 	//Method -- CameraZooming
 	//Parameters -- value
 	//Purpose -- add new value to orthogragive size .
@@ -111,19 +111,19 @@ public class CameraManager : MonoBehaviour
 		//Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mousePosOrigin);
 		//Vector3 mov = pos.y * zoomingSpeed * transform.forward;
 		//transform.Translate(mov, Space.World);
-		if (camera.orthographicSize < 5 && value > 0)
+		if (GetComponent<Camera>().orthographicSize < 5 && value > 0)
 		{
-			camera.orthographicSize += value;
+			GetComponent<Camera>().orthographicSize += value;
 		}
-		if (camera.orthographicSize > 2.4 && value < 0)
+		if (GetComponent<Camera>().orthographicSize > 2.4 && value < 0)
 		{
-			camera.orthographicSize += value;
+			GetComponent<Camera>().orthographicSize += value;
 		}
 	}
 	//==================camera follow the unit being control=======================
 	private void CameraFollowUnit()
 	{
-		if(panCam == false)
+		if(panCam == false && focusedUnit != null)
 		{
 			newPosition = new Vector3 (focusedUnit.transform.position.x + 2.0f, focusedUnit.transform.position.y - 4.0f, -10.0f);
 			newPosition.x = Mathf.Clamp (newPosition.x, leftBound, rightBound);
@@ -131,7 +131,8 @@ public class CameraManager : MonoBehaviour
 			Camera.main.transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * camSpeed);
 		}
 	}
-
+	//========================================================
+	//set position co camera follow the span.
     private void CameraFollowSpawn()
     {
         newPosition = new Vector3(spawner.transform.position.x + 2.0f, spawner.transform.position.y + 2.0f, -10.0f);
@@ -139,7 +140,7 @@ public class CameraManager : MonoBehaviour
         newPosition.y = Mathf.Clamp(newPosition.y, bottomBound, rightBound);
         Camera.main.transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * camSpeed);
     }
-
+	//==================camera follow the unit being control=======================
 	//Method -- UnitFocus
 	//Parameters -- GameObject unitObj
 	//Purpose -- UnitFocus will take in an argument of GameObject unitObj, this will tell the camera to then focus on that
@@ -169,4 +170,5 @@ public class CameraManager : MonoBehaviour
         Camera.main.transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * camSpeed);
         spawner = spawnObj;
     }
+
 }
