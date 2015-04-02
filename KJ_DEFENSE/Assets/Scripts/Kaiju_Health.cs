@@ -13,7 +13,7 @@ public class Kaiju_Health : MonoBehaviour
 	public int currentHealth ;
 	// list of vulnerable part. 
 	//public List<GameObject> vulnerablePart;
-
+	private bool paused = false;
 	// audio
 	public List<AudioClip> listAudioClip ;
 
@@ -105,5 +105,14 @@ public class Kaiju_Health : MonoBehaviour
 		this.transform.position = KaijuPosition;
 	
 //		this.gameObject.GetComponent <Transform> ().position
+	}
+
+	public void Pause()
+	{
+		paused = true;
+	}
+	public void unPause()
+	{
+		paused = false;
 	}
 }

@@ -32,6 +32,11 @@ public class BulletLifetime : MonoBehaviour
 			bullet.GetComponent<KaijuVunerablePart>().gotHit(bulletDmg);
 			Instantiate(Resources.Load("Explosion"),this.transform.position,this.transform.rotation)	;
 			this.destroy();
+		}//Obstacle
+		if(bullet.CompareTag ("Obstacle"))
+		{	
+		
+			this.destroy();
 		}
 	}
 	//===================================================

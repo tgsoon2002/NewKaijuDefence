@@ -18,7 +18,7 @@ public class InputManager : MonoBehaviour
 	private HandleUnitInputs handleUnitInputs;
     private HandleBuyStateInputs handleBuyInputs;
 	//public Unit unit;
-
+	private bool paused;
 
 	private float back = -1.0f;
 	private float forward = 1.0f;
@@ -57,15 +57,17 @@ public class InputManager : MonoBehaviour
         spawnManager = gameObject.GetComponent<SpawnManager>();
 		unit = gameManager.GetFocusedUnit().GetComponent<Unit>();   
 
-		handleAllInputs += HandleCameraPanning;
-		handleAllInputs += HandleCameraZooming;
-		handleAllInputs += GoIntoBuyingState;
-		
+		// handle control unit, disable in pause, buying and unitchoosed mode.
 		handleUnitInputs += HandleUnitCameraFocus;
 		handleUnitInputs += HandleUnitMovement;
 		handleUnitInputs += HandleUnitShoot;
 		handleUnitInputs += HandleCannonAngle;
-        
+        // handle control the camera.
+		handleAllInputs += HandleCameraPanning;
+		handleAllInputs += HandleCameraZooming;
+
+		// handle the controller of buying the unit
+		handleBuyInputs += GoIntoBuyingState;
 		handleBuyInputs += HandleBuyingState;
 
 		cameraManager.UnitFocus(unit);
@@ -75,25 +77,26 @@ public class InputManager : MonoBehaviour
 	void Update() 
 	{
 		// change time scale if change to buying mode.
-		if (buyingMode) {
+		if (paused) {
 			Time.timeScale = 0.2F;
+
+			if (unitSelected) {
+				HandleSpawnState();
+			}
+			else {
+				handleBuyInputs();
+			}
+
 		} else {
 			Time.timeScale = 1.0F;
-		}
-
-        handleAllInputs();
-        handleBuyInputs();
-
-		if(gameManager.focusedUnit != null && cameraManager.isBuying == false){
 			handleUnitInputs();
-            unit = gameManager.focusedUnit.GetComponent<Unit>();
-        }
-        else if(cameraManager.isBuying == true){
-        	HandleSpawnState();
-        }
+			unit = gameManager.focusedUnit.GetComponent<Unit>();
+		}
+        handleAllInputs();
+        
 		// make timmer tick
-		timerShot += Time.deltaTime;
-		timerBuy += Time.deltaTime;
+		timerShot += Time.deltaTime;// Cooldown between shot
+		timerBuy += Time.deltaTime; // cooldown between buy
 	}
 	//================================switch unit being focus with tab==================================================	
 	//press tab to switch between unit.
@@ -124,12 +127,14 @@ public class InputManager : MonoBehaviour
 	 //===========press a or d to call move functoin of  unit being controled=================
 	void HandleUnitMovement()
 	{
-        if(Input.GetKey("a")) // move unit back.
+       //float move = Input.GetAxis ("Horizontal");
+		//unit.MoveFocusedUnit(move);
+		if(Input.GetKey("a")) // move unit back.
         {
             unit.setAnimation(true);
             unit.MoveFocusedUnit(back);
         }
-        else if(Input.GetKey("d")/*Move unit forward*/)
+        else if(Input.GetKey("d"))
         {
             unit.setAnimation(true);
             unit.MoveFocusedUnit(forward);
@@ -138,6 +143,17 @@ public class InputManager : MonoBehaviour
         {
             unit.setAnimation(false);
         }
+	}
+	//===========press spacebar to make unit shoot=================
+	void HandleUnitShoot()
+	{
+		if (Input.GetButtonDown ("Shoot") && timerShot >= timeBetweenShot) {
+			
+			GameObject newUnit = Instantiate(Resources.Load("Bullet"),unit.transform.GetChild(0).GetChild(0).transform.position,unit.transform.GetChild(0).transform.rotation) as GameObject;
+			newUnit.GetComponent<Rigidbody2D>().AddForce(900.0f * unit.transform.GetChild(0).transform.right);
+			unit.GetComponent<Unit>().ShootSound();
+			timerShot = 0;
+		}
 	}
 	//===========press w or s to change functoin change angle of controlling unit=================
 	void HandleCannonAngle()
@@ -151,6 +167,8 @@ public class InputManager : MonoBehaviour
 			unit.ChangeCannonAngle(back);
 		}
 	}
+
+
 	// ========move mouse while holding left click to pan===============
 	void HandleCameraPanning()
 	{
@@ -187,14 +205,16 @@ public class InputManager : MonoBehaviour
 	// change state to buying state, create an indicator 
     void GoIntoBuyingState()
     {
-		if(Input.GetKeyDown(KeyCode.B) && buyingMode == false)
-        {
-			buyingMode = true;
+		if( paused == true && buyingMode == true && unitSelected)
+		{
+			CreateIndicator();
+        }
+    }
+	private void CreateIndicator(){
 			spawnIndicator = Instantiate(Resources.Load("Temp_Spawn_Icon"), Camera.main.ScreenToWorldPoint(Input.mousePosition), gameManager.SpawnLocation.rotation) as GameObject;
 			cameraManager.isBuying = true;
 			cameraManager.SpawnIconFocus(spawnIndicator.GetComponent<SpawnIconBehavior>());
-        }
-    }
+		}
 	//============ control while in buying state==================
     void HandleBuyingState()
     {
@@ -202,20 +222,15 @@ public class InputManager : MonoBehaviour
 		{
 			if(Input.GetKeyDown(KeyCode.Alpha1))
 			{
-				type = Unit_Type.ARTILLERY;
-				unitSelected = true;
-
+				buyArtillery();
 			}
 			else if(Input.GetKeyDown(KeyCode.Alpha2))
 			{
-				type = Unit_Type.INFANTRY;
-				unitSelected = true;
-
+				buyInfantry();
 			}
 			else if(Input.GetKeyDown(KeyCode.Alpha3))
 			{
-				type = Unit_Type.TANK;
-				unitSelected = true;
+				buyTank();
 			}
 			if(Input.GetKeyDown(KeyCode.Escape))
 			{
@@ -223,6 +238,25 @@ public class InputManager : MonoBehaviour
 			}
 		}
     }
+	public void buyTank(){
+		type = Unit_Type.TANK;
+		unitSelected = true;
+		cameraManager.GetComponent<PauseMenuScript>().UnpauseGame();
+		CreateIndicator();
+	}
+	public void buyArtillery(){
+		type = Unit_Type.ARTILLERY;
+		unitSelected = true;
+		cameraManager.GetComponent<PauseMenuScript>().UnpauseGame();
+		CreateIndicator();
+	}
+	public void buyInfantry(){
+		type = Unit_Type.INFANTRY;
+		unitSelected = true;
+		cameraManager.GetComponent<PauseMenuScript>().UnpauseGame();
+		CreateIndicator();
+	}
+
 	// =======handle input when in buying mode and unit type selected==============
 	void HandleSpawnState()
 	{
@@ -255,17 +289,7 @@ public class InputManager : MonoBehaviour
 		}
 	
 	}
-	void HandleUnitShoot()
-	{
-		if (Input.GetButtonDown ("Shoot") && timerShot >= timeBetweenShot) {
 
-			GameObject newUnit = Instantiate(Resources.Load("Bullet"),unit.transform.GetChild(0).GetChild(0).transform.position,unit.transform.GetChild(0).transform.rotation) as GameObject;
-			newUnit.GetComponent<Rigidbody2D>().AddForce(900.0f * unit.transform.GetChild(0).transform.right);
-
-			unit.GetComponent<Unit>().ShootSound();
-			timerShot = 0;
-		}
-	}
 
 	//=======Exit Buying state=============
 	void ExitBuyingState()
@@ -273,8 +297,20 @@ public class InputManager : MonoBehaviour
 		buyingMode = false;
 		unitSelected = false;
 		Destroy(spawnIndicator);
-		buyingMode = false;
-
+		paused = false;
 
 		}
+
+	public void Pause()
+	{
+		paused = true;
+	}
+	public void unPause()
+	{
+		paused = false;
+	}
+	public void buyingPressed()
+	{
+		buyingMode = true;
+	}
 }

@@ -12,7 +12,7 @@ public class PauseMenuScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//unpause the game on start
-		Time.timeScale = 1;
+		//Time.timeScale = 1;
 		//get the animator component
 		anim = pauseMenuPanel.GetComponent<Animator>();
 		//disable it on start to stop it from playing the default animation
@@ -40,7 +40,7 @@ public class PauseMenuScript : MonoBehaviour {
 		//set the isPaused flag to true to indicate that the game is paused
 		isPaused = true;
 		//freeze the timescale
-		Time.timeScale = 0;
+		//Time.timeScale = 0;
 	}
 	//function to unpause the game
 	public void UnpauseGame(){
@@ -49,7 +49,7 @@ public class PauseMenuScript : MonoBehaviour {
 		//play the SlideOut animation
 		anim.Play("PauseMenuSlideOut");
 		//set back the time scale to normal time scale
-		Time.timeScale = 1;
+		//Time.timeScale = 1;
 	}
 	
 }

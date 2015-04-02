@@ -99,10 +99,10 @@ public class SpawnManager : MonoBehaviour
 		while(isRunning == true)
 		{
 			start = new Vector3(obj.transform.position.x, spawnLocation.transform.position.y, 0.0f);
-			obj.transform.position = Vector3.MoveTowards(start, target, Time.deltaTime * 10.0f);
+			//obj.transform.position = Vector3.MoveTowards(start, target, Time.deltaTime * 10.0f);
 			Debug.Log("still couroutine");
 			//Debug.Log("New Tank's Position: " + obj.transform.position);
-			Debug.Log(obj.transform.position.x - target.x);
+			//obj.GetComponent<Unit>().MoveFocusedUnit(1.0f);
 			if(Mathf.Abs(obj.transform.position.x - target.x) <= 0.005f )
 			{
 				isRunning = false;

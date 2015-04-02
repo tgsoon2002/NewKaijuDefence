@@ -24,7 +24,7 @@ public class Unit : MonoBehaviour
 	IDataReader reader;
 
 	string name;
-
+	private bool paused;
 	int Damage;
 	int Armor;
 	float Firerate;
@@ -112,10 +112,14 @@ public class Unit : MonoBehaviour
 	//parameter moveDirection<float>
 	public void MoveFocusedUnit(float moveDirection)
 	{
+//		Rigidbody2D.velocity = new Vector2 (moveDirection * objSpeed , 0.0f);
+
 		position.x += moveDirection * objSpeed * Time.deltaTime;
+		position.y = this.transform.position.y;
 
 		this.transform.position = position;
 	}
+	//==========================================
 
 	//=====================================================================
 	// change the angle of cannon with parameter, only applied to tank and artillery for now
@@ -219,5 +223,13 @@ public class Unit : MonoBehaviour
 			coolDownBetweenTakeHit=Firerate;
 			objSpeed=Movement;
 		}
+	}
+	public void Pause()
+	{
+		paused = true;
+	}
+	public void unPause()
+	{
+		paused = false;
 	}
 }
