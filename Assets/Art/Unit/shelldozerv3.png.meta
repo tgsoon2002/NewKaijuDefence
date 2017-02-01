@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: 34331b4524a76a74abe70723da368aca
+timeCreated: 1444544318
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: shelldozer_Body
+    21300002: shelldozer_Turret
+    21300004: shelldozer_Barrel
+    21300006: shelldozer_Thread
+    21300008: shelldozer_Dozer
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: shelldozer_Body
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 67
+        width: 128
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shelldozer_Turret
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 85
+        width: 59
+        height: 34
+      alignment: 9
+      pivot: {x: .610000014, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shelldozer_Barrel
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 89
+        width: 84
+        height: 25
+      alignment: 9
+      pivot: {x: .109999999, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shelldozer_Thread
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1
+        width: 156
+        height: 57
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shelldozer_Dozer
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 2
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

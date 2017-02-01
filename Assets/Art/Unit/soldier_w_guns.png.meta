@@ -1,0 +1,298 @@
+fileFormatVersion: 2
+guid: b4546712599dd184c99b291300d6bd92
+timeCreated: 1445707834
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: soldier_w_guns_0
+    21300002: soldier_w_guns_1
+    21300004: soldier_w_guns_2
+    21300006: soldier_w_guns_3
+    21300008: soldier_w_guns_4
+    21300010: soldier_w_guns_5
+    21300012: soldier_w_guns_6
+    21300014: soldier_w_guns_7
+    21300016: soldier_Rocket
+    21300018: soldier_Guns
+    21300020: soldier_Dying6
+    21300022: soldier_Dying5
+    21300024: soldier_Dying4
+    21300026: soldier_Dying3
+    21300028: soldier_Dying2
+    21300030: soldier_Dying1
+    21300032: soldier_Running4
+    21300034: soldier_Running3
+    21300036: soldier_Running2
+    21300038: soldier_Running1
+    21300040: soldier_Head
+    21300042: soldier_Head1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: soldier_w_guns_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 373
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_w_guns_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 374
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_w_guns_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 374
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_w_guns_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 382
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_w_guns_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 374
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_w_guns_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 320
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_w_guns_6
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 321
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_w_guns_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 321
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Rocket
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 248
+        width: 60
+        height: 37
+      alignment: 9
+      pivot: {x: .336237073, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Guns
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 286
+        width: 60
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Dying6
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 95
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Dying5
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 66
+        width: 95
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Dying4
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 129
+        width: 95
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Dying3
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 4
+        width: 95
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Dying2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 71
+        width: 95
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Dying1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 134
+        width: 95
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Running4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 6
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Running3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 67
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Running2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 130
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Running1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 195
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Head
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 259
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier_Head1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 286
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

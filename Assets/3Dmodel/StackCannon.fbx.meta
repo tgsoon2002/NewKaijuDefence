@@ -1,0 +1,463 @@
+fileFormatVersion: 2
+guid: e14251f64f16517478992cbb4d1b74a7
+timeCreated: 1433724843
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: body
+    100002: Cannon
+    100004: cannonExaust
+    100006: cannonPointer
+    100008: cannonPointerMaster
+    100010: cannonTrigger
+    100012: masterBodyJoint
+    100014: portAnchor
+    100016: portArm
+    100018: portLargeWheel
+    100020: portShoulder
+    100022: portSmallWheelBack
+    100024: portSmallWheelFront
+    100026: //RootNode
+    100028: starboardAnchor
+    100030: starboardArm
+    100032: starboardLargeWheel
+    100034: starboardShoulder
+    100036: starboardSmallWheelBack
+    100038: starboardSmallWheelFront
+    400000: body
+    400002: Cannon
+    400004: cannonExaust
+    400006: cannonPointer
+    400008: cannonPointerMaster
+    400010: cannonTrigger
+    400012: masterBodyJoint
+    400014: portAnchor
+    400016: portArm
+    400018: portLargeWheel
+    400020: portShoulder
+    400022: portSmallWheelBack
+    400024: portSmallWheelFront
+    400026: //RootNode
+    400028: starboardAnchor
+    400030: starboardArm
+    400032: starboardLargeWheel
+    400034: starboardShoulder
+    400036: starboardSmallWheelBack
+    400038: starboardSmallWheelFront
+    4300000: Cannon
+    4300002: body
+    7400000: Station
+    7400002: Shooting
+    7400004: Scoot
+    7400006: 'Moving '
+    7400008: Idle
+    9500000: //RootNode
+    13700000: body
+    13700002: Cannon
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Station
+      takeName: Station
+      firstFrame: -58
+      lastFrame: -33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: PrepareDone
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: Cannon
+        weight: 1
+      - path: cannonPointerMaster
+        weight: 0
+      - path: cannonPointerMaster/cannonExaust
+        weight: 0
+      - path: cannonPointerMaster/cannonTrigger
+        weight: 0
+      - path: masterBodyJoint
+        weight: 1
+      - path: masterBodyJoint/cannonPointer
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm/portAnchor
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm/starboardAnchor
+        weight: 1
+      - path: masterBodyJoint/portLargeWheel
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelFront
+        weight: 1
+      - path: masterBodyJoint/starboardLargeWheel
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelFront
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Shooting
+      takeName: Shooting
+      firstFrame: -33
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: Cannon
+        weight: 1
+      - path: cannonPointerMaster
+        weight: 0
+      - path: cannonPointerMaster/cannonExaust
+        weight: 1
+      - path: cannonPointerMaster/cannonTrigger
+        weight: 1
+      - path: masterBodyJoint
+        weight: 1
+      - path: masterBodyJoint/cannonPointer
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm/portAnchor
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm/starboardAnchor
+        weight: 1
+      - path: masterBodyJoint/portLargeWheel
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelFront
+        weight: 1
+      - path: masterBodyJoint/starboardLargeWheel
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelFront
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Scoot
+      takeName: Scoot
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .991097927
+        functionName: PrepareDone
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: Cannon
+        weight: 1
+      - path: cannonPointerMaster
+        weight: 0
+      - path: cannonPointerMaster/cannonExaust
+        weight: 0
+      - path: cannonPointerMaster/cannonTrigger
+        weight: 0
+      - path: masterBodyJoint
+        weight: 1
+      - path: masterBodyJoint/cannonPointer
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm/portAnchor
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm/starboardAnchor
+        weight: 1
+      - path: masterBodyJoint/portLargeWheel
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelFront
+        weight: 1
+      - path: masterBodyJoint/starboardLargeWheel
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelFront
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: 'Moving '
+      takeName: 'Moving '
+      firstFrame: 24
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: Cannon
+        weight: 1
+      - path: cannonPointerMaster
+        weight: 0
+      - path: cannonPointerMaster/cannonExaust
+        weight: 0
+      - path: cannonPointerMaster/cannonTrigger
+        weight: 0
+      - path: masterBodyJoint
+        weight: 1
+      - path: masterBodyJoint/cannonPointer
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm/portAnchor
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm/starboardAnchor
+        weight: 1
+      - path: masterBodyJoint/portLargeWheel
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelFront
+        weight: 1
+      - path: masterBodyJoint/starboardLargeWheel
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelFront
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 48
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: Cannon
+        weight: 1
+      - path: cannonPointerMaster
+        weight: 0
+      - path: cannonPointerMaster/cannonExaust
+        weight: 0
+      - path: cannonPointerMaster/cannonTrigger
+        weight: 0
+      - path: masterBodyJoint
+        weight: 1
+      - path: masterBodyJoint/cannonPointer
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/portShoulder/portArm/portAnchor
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm
+        weight: 1
+      - path: masterBodyJoint/cannonPointer/starboardShoulder/starboardArm/starboardAnchor
+        weight: 1
+      - path: masterBodyJoint/portLargeWheel
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/portSmallWheelFront
+        weight: 1
+      - path: masterBodyJoint/starboardLargeWheel
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelBack
+        weight: 1
+      - path: masterBodyJoint/starboardSmallWheelFront
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

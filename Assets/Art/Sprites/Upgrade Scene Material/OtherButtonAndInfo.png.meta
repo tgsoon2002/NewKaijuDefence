@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 190262a3e7cdb2c4087de6626397e80e
+timeCreated: 1432540947
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: AcceptButton
+    21300002: DenyButton
+    21300004: DownButton
+    21300006: UpButton
+    21300008: Button Frame
+    21300010: ChangeScenceButtonFrame
+    21300012: WorldMapButtonText
+    21300014: MenuButtonText
+    21300016: InfoButtonFrame
+    21300018: Cost&BugetFrame
+    21300020: OtherButtonAndInfo_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: AcceptButton
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 140
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DenyButton
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 81
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DownButton
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 80
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UpButton
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 140
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button Frame
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 69
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChangeScenceButtonFrame
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 214
+        width: 193
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WorldMapButtonText
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 284
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuButtonText
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 263
+        width: 86
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: InfoButtonFrame
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 68
+        width: 446
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 14, y: 15, z: 19, w: 12}
+    - name: Cost&BugetFrame
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 66
+        width: 208
+        height: 109
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 17, y: 17, z: 18, w: 18}
+    - name: OtherButtonAndInfo_0
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 15
+        width: 68
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 18, y: 18, z: 17, w: 19}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

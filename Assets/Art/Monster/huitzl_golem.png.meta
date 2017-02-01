@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: cb852c252b0398742829d3a2111e8de5
+timeCreated: 1443669273
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: huitzl_golem_0
+    21300002: huitzl_HandLeft
+    21300004: huitzl_ShoulderLeft
+    21300006: huitzl_HandRight
+    21300008: huitzl_ShoulderRight
+    21300010: huitzl_FootRight
+    21300012: huitzl_GemTopCover
+    21300014: huitzl_golem_7
+    21300016: huitzl_HandJoint
+    21300018: huitzl_FootLeft
+    21300020: huitzl_GemBottomCover
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: huitzl_golem_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 113
+        width: 449
+        height: 485
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_HandLeft
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 420
+        width: 179
+        height: 175
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_ShoulderLeft
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 435
+        width: 187
+        height: 159
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_HandRight
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 204
+        width: 190
+        height: 153
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_ShoulderRight
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 272
+        width: 164
+        height: 147
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_FootRight
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 13
+        width: 169
+        height: 117
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_GemTopCover
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 124
+        width: 148
+        height: 134
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_golem_7
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 18
+        width: 77
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_HandJoint
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 21
+        width: 77
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_FootLeft
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 8
+        width: 140
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: huitzl_GemBottomCover
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 32
+        width: 132
+        height: 81
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

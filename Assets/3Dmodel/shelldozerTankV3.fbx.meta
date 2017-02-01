@@ -1,0 +1,273 @@
+fileFormatVersion: 2
+guid: f5f8fe0b56a993d44b5bf261948d9267
+timeCreated: 1433441984
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Body2
+    100002: Body3
+    100004: CannonJoint
+    100006: CannonJoint1
+    100008: CannonJoint2
+    100010: CannonJoint3
+    100012: locator1
+    100014: Master_Joint
+    100016: Shelldozer_Geo
+    100018: //RootNode
+    100020: StarBoardBackLargeWheel
+    100022: StarBoardBackSmallWheel
+    100024: StarBoardFrontLargeWheel
+    100026: StarBoardFrontSmallWheel
+    100028: TurretJoint
+    400000: Body2
+    400002: Body3
+    400004: CannonJoint
+    400006: CannonJoint1
+    400008: CannonJoint2
+    400010: CannonJoint3
+    400012: locator1
+    400014: Master_Joint
+    400016: Shelldozer_Geo
+    400018: //RootNode
+    400020: StarBoardBackLargeWheel
+    400022: StarBoardBackSmallWheel
+    400024: StarBoardFrontLargeWheel
+    400026: StarBoardFrontSmallWheel
+    400028: TurretJoint
+    4300000: Shelldozer_Geo
+    7400000: BlitzenTankMovingForward
+    7400002: BlitzenTank Idle
+    7400004: Shooting
+    9500000: //RootNode
+    13700000: Shelldozer_Geo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BlitzenTankMovingForward
+      takeName: BlitzenTank Animationv4
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Master_Joint
+        weight: 1
+      - path: Master_Joint/Body2
+        weight: 1
+      - path: Master_Joint/Body2/Body3
+        weight: 1
+      - path: Master_Joint/Body2/CannonJoint2
+        weight: 1
+      - path: Master_Joint/Body2/CannonJoint2/CannonJoint3
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1/CannonJoint
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1/locator1
+        weight: 1
+      - path: Master_Joint/StarBoardBackLargeWheel
+        weight: 1
+      - path: Master_Joint/StarBoardBackSmallWheel
+        weight: 1
+      - path: Master_Joint/StarBoardFrontLargeWheel
+        weight: 1
+      - path: Master_Joint/StarBoardFrontSmallWheel
+        weight: 1
+      - path: Shelldozer_Geo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: BlitzenTank Idle
+      takeName: BlitzenTank Animationv4
+      firstFrame: 24
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Master_Joint
+        weight: 1
+      - path: Master_Joint/Body2
+        weight: 1
+      - path: Master_Joint/Body2/Body3
+        weight: 1
+      - path: Master_Joint/Body2/CannonJoint2
+        weight: 1
+      - path: Master_Joint/Body2/CannonJoint2/CannonJoint3
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1/CannonJoint
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1/locator1
+        weight: 1
+      - path: Master_Joint/StarBoardBackLargeWheel
+        weight: 1
+      - path: Master_Joint/StarBoardBackSmallWheel
+        weight: 1
+      - path: Master_Joint/StarBoardFrontLargeWheel
+        weight: 1
+      - path: Master_Joint/StarBoardFrontSmallWheel
+        weight: 1
+      - path: Shelldozer_Geo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Shooting
+      takeName: BlitzenTank Animationv4
+      firstFrame: 47
+      lastFrame: 83
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Master_Joint
+        weight: 1
+      - path: Master_Joint/Body2
+        weight: 1
+      - path: Master_Joint/Body2/Body3
+        weight: 1
+      - path: Master_Joint/Body2/CannonJoint2
+        weight: 1
+      - path: Master_Joint/Body2/CannonJoint2/CannonJoint3
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1/CannonJoint
+        weight: 1
+      - path: Master_Joint/Body2/TurretJoint/CannonJoint1/locator1
+        weight: 1
+      - path: Master_Joint/StarBoardBackLargeWheel
+        weight: 1
+      - path: Master_Joint/StarBoardBackSmallWheel
+        weight: 1
+      - path: Master_Joint/StarBoardFrontLargeWheel
+        weight: 1
+      - path: Master_Joint/StarBoardFrontSmallWheel
+        weight: 1
+      - path: Shelldozer_Geo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
